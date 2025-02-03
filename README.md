@@ -1,345 +1,622 @@
-# Dev Portfolio
+<h1 align="center"> 
+	<a href="https://JayantGoel001.github.io/">JayantGoel001.github.io</a> - v2.0
+	<p align="center">
+		<img alt="HTML5" src="https://img.shields.io/badge/-HTML5-E44D26?style=flat&logo=html5&logoColor=white"/>
+		<img alt="CSS3" src="https://img.shields.io/badge/-CSS3-2965f1?style=flat&logo=css3&logoColor=white"/>
+		<img alt="JavaScript" src="https://img.shields.io/badge/-JavaScript-F0DB4F?style=flat&logo=javascript&logoColor=white"/>
+		<img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white"/>
+		<img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white"/>
+		<img alt="Angular" src="https://img.shields.io/badge/Angular-DD0031?style=flat&logo=angular&logoColor=white"/>
+		<img alt="NodeJS" src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white"/>
+		<img alt="Docker" src="https://img.shields.io/badge/Docker-0db7ed?style=flat&logo=docker&logoColor=white"/>
+		<img alt="Open Source? Yes!" src="https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github"/> 
+	</p>
+</h1>
 
-🚀 **[Dev Portfolio V2 has arrived. Meet Devfolio, a modern portfolio + blog template built with GatsbyJS and TailwindCSS](https://github.com/RyanFitzgerald/devfolio)** 🚀
+<br/>
 
-This repo contains an easy-to-customize personal dev portfolio template that was created with Sass and JavaScript. It is lightweight and fully responsive, as well as comes with the Bootstrap grid system and loaded with Font Awesome. The site is static and comes production ready if you just want to add your information and go. Alternatively, you can edit styles, colours, and scripts fairly easily. The site was built as modular as possible to make it easy to shift around styles and content.
-
-To view a live demo, [click here](https://ryanfitzgerald.github.io/devportfolio/).
-
-Looking for a blog template? Checkout [DevBlog](https://github.com/RyanFitzgerald/devblog).
-
-## Features
-
-* Gulp ready (compiles Sass and minifies JS)
-* Sass ready with lots of commenting
-* Fully responsive
-* Comes with Bootstrap grid system
-* Easy colour changes can be done through simple variable edits
-
-## Contents
-
-- [Setup and Configuration](#setup-and-configuration)
-    - [Making Edits / Customizing the Template](#making-edits--customizing-the-template)
-    - [Using the Template As Is](#using-the-template-as-is)
-- [Customization and Editing](#customization-and-editing)
-    - [General](#general)
-    - [Images](#images)
-    - [Header Section](#header-section)
-    - [Lead Section](#lead-section)
-    - [About Section](#about-section)
-    - [Experience Section](#experience-section)
-    - [Education Section](#education-section)
-    - [Projects Section](#projects-section)
-    - [Skills Section](#skills-section)
-    - [Contact Section](#contact-section)
-    - [Footer Section](#footer-section)
-    - [Optional Sections](#optional-sections)
-- [Changelog](#changelog)
-- [License](#license)
-
-## Setup and Configuration
-
-The setup required can be broken into two types:
-1. If you want to make edits or customize the template
-2. If you just want to add your information as use as is
-
-### Making Edits / Customizing the Template
-
-To setup, simply fork the repo and run `npm install` in order to get all the Gulp dev dependencies. Next, run `Gulp watch` to compile the Sass and minify the JavaScript. Alternatively, if you don't have Gulp installed globally, you can run the npm script `npm run watch`. Any changes done to the JavaScript (js/scripts.js) or Sass (sass/styles.scss) will be autocompiled and ready to go.
-
-All scripts are within `js/scripts.js` and get minified to `js/scripts.min.js`. All styles are in `sass/styles.scss` and get compiled to `css/styles.css`. Both the minified scripts file and compiled CSS file are what is loaded on the page by default.
-
-At this point, the page is ready to go and you can begin to add your own information and make any needed changes. The sections below  contains a quick breakdown of each of the default sections and how they work.
-
-### Using The Template As Is
-
-If you wish to use the template as is (i.e. how it's seen in the demo), then all that's required is the `css`, `images`, `js`, `libs` folders and the `index.html` file. You would then add your content to `index.html` as needed and you're good to go!
-
-## Customization and Editing
-
-### General
-
-In general, most styles on the page are based off the definitions of variables in the variable section of the style sheet:
-
-```SCSS
-// Define base and accent colors
-$base-color: #3498db;
-$base-color-hover: darken($base-color, 10%);
-
-// Define background colors
-$background: #fff;
-$background-alt: #f2f2f5;
-
-// Define border colors
-$border: #dcd9d9;
-
-// Define text colors
-$heading: #374054;
-$text: #74808a;
-```
-
-If you wish to change the general colour scheme of the page for example, simply change the value of `$base-color`.
-
-There is also a number of default CSS classes that can be applied such as `.shadow`, `.shadow-large`, `.btn-rounded-white`, and various others. These can be found under the General Styles section in the style sheet.
-
-### Images
-
-By default, the template comes with a number of images, some of which can be kept and others which act simply as placeholders and should be switched. The template contains the following:
-
-* Main background (images/lead-bg.jpg) - this is the main background image provided via [Unsplash](https://unsplash.com/). This can be kept or changed easily by replacing `images/lead-bg.jpg` with your new background (recommended size of at least 1920x1080).
-* Favicon (/favicon.ico) - this is the favicon used for the page. Similar to the main bg, this can be kept or changed easily by replacing the `favicon.ico` with your new one.
-* Project image - these are the images associated with the projects under the project section. These are simply placeholders and should either be replaced or removed.
-
-### Header Section
-
-The header section can be found within the `<header>` tag and simply contains an unordered list of anchors to different sections of the page. If you add a new section and want to be able to quickly navigate to it from the top, simply add another list element with an anchor that has the href of the ID of the section. Conversely, if you remove a section, don't forget to remove the associated navigation element.
-
-If you wish to add a header link to an external page, simply add the class `no-scroll` to the anchor. For example:
-
-```HTML
-<li>
-    <a href="https://google.com" class="no-scroll">Google</a>
-</li>
-```
-
-If you wish to have a sticky (fixed) header, you simply need to add a class of `sticky` to the main header. For example, that would be accomplished as follows:
-
-```HTML
-<header class="sticky">
-    <!-- Header content -->
-</header>
-```
-
-### Lead Section
-
-The Lead section is pretty straightforward, it contains an h1 for your name and an h2 for your title. It also contains a link that can be used to link to your resume should you wish to add it as well.
-
-If you want your resume to automatically download when the button is clicked instead of opening up in another tab (the default behaviour), add the following code (Thanks to jkfran for the suggestion) in the lead:
-
-```HTML
-<a href="path/to/resume.pdf" download="resume.pdf" class="btn-rounded-white">Download Resume</a>
-```
-
-The href attribute points to where your resume is stored and the download attribute is what triggers the download / provides the name the file will be downloaded as when the user clicks the button (In this case, it will download as resume.pdf).
-
-### About Section
-
-The about section contains a quick about blurb that can be edited by changing the text within the paragraph tags.
-
-### Experience Section
-
-The experience section creates a vertical timeline with all your relevant experience. The code for the timeline creation can be found within `js/scripts.js` and is an adaptation of [RyanFitzgerald/vertical-timeline](https://github.com/RyanFitzgerald/vertical-timeline).
-
-The default format is as follows:
-
-```HTML
-<div id="experience-timeline">
-    <div data-date="September 2015 – September 2016">
-        <h3>Employer Name</h3>
-        <h4>Job Title</h4>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-    </div>
+<div align="center">
+	<a href="https://github.com/JayantGoel001/JayantGoel001.github.io">
+		<img src="src/screenshots/icon.png" alt="Logo" width="80" height="80"/>
+	</a>
+	<h3 align="center">Jayant Goel (JayantGoel001)'s Personal Portfolio</h3>
+	<p align="center">
+		This is the source code for my Personal Portfolio.
+		<br/>
+		<a href="https://github.com/JayantGoel001/JayantGoel001.github.io"><strong>Explore the docs »</strong></a>
+		<br/>
+		<br/>
+		<a href="https://jayantgoel001.github.io/">View Demo</a>
+		·
+		<a href="https://github.com/JayantGoel001/JayantGoel001.github.io/issues/new?assignees=JayantGoel001&labels=bug&template=bug_report.yml&title=%5BBUG%5D%3A+">Report Bug</a>
+		·
+		<a href="https://github.com/JayantGoel001/JayantGoel001.github.io/issues/new?assignees=&labels=enhancement&template=feature_request.yml&title=%5BFEAT%5D%3A+">Request Feature</a>
+	</p>
+	<p>
+		<img src="https://img.shields.io/github/contributors/JayantGoel001/JayantGoel001.github.io.svg?styles/default/yes.svg" alt="Contributors"/> • 
+		<img src="https://img.shields.io/github/forks/JayantGoel001/JayantGoel001.github.io.svg?styles/default/yes.svg" alt="Forks"/> • 
+		<img src="https://img.shields.io/github/stars/JayantGoel001/JayantGoel001.github.io.svg?styles/default/yes.svg" alt="Stars"/> •
+		<img src="https://img.shields.io/github/issues/JayantGoel001/JayantGoel001.github.io.svg?styles/default/yes.svg" alt="Issues"/> •
+		<img alt="Repo Size" src="https://img.shields.io/github/repo-size/JayantGoel001/JayantGoel001.github.io"/>
+	</p>
+	<p>
+		<img alt="Github Deployment Status" src="https://github.com/JayantGoel001/JayantGoel001.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages&dummy=unused"/> •
+		<img src="https://github.com/JayantGoel001/JayantGoel001.github.io/actions/workflows/publish-docker.yml/badge.svg?dummy=unused" alt="Docker Image Status"/>
+	</p>
 </div>
+
+<br/>
+
+<p align="center">
+  <a href="https://JayantGoel001.github.io/">
+    <img src="src/screenshots/screenshot.gif" alt="landing page"/>
+  </a>
+</p>
+
+
+## Table of Contents :scroll:
+
+- [Design](#design-art)
+    - [Fonts](#fonts)
+    - [Color Scheme](#color-scheme)
+    - [Icon](#icon)
+- [Built With](#built-with-package)
+- [How to Run Locally?](#how-to-run-locally-dart)
+- [Sections](#sections-bookmark)
+- [Folder Structure](#folder-structure-open_file_folder)
+- [Search engine optimization(SEO)](#search-engine-optimizationseo-spider)
+- [PageSpeed Insights](#pagespeed-insights)
+- [Creator / Maintainer](#creator--maintainer-man_technologist)
+- [Contributing](#-contributing)
+- [Contributors](#contributors-)
+- [License](#-license)
+
+
+## Design :art:
+
+### Fonts
+
+[Black Ops One](https://fonts.google.com/specimen/Black+Ops+One) - Text Style
+
+<img alt="Font Example Screenshot" src="src/screenshots/font.png">
+
+### Color Scheme
+
+#### Main Screen
+
+- **Gunmetal** - Primary theme color
+- **Yellow Orange Color Wheel** - Secondary theme color
+- **Eerie Black** - Dark Text Color
+- **Sonic Silver** - Muted Text Color
+- **White** - Text Color
+- **Cultured** - Light Text Color & Light Background Color
+- **Dutch White** - Waifu Tips Background Color
+
+<a href="https://coolors.co/242a35-ff9800-212529-6c757d-ffffff-f8f9fa-ecd9bc">
+  <img alt="Color Palette Screenshot" src="src/screenshots/color-main.png"/>
+</a>
+
+<br/>
+<br/>
+
+#### Splash Screen & 404 Page
+
+- **Rich Black FOGRA 39** - Background Color of Splash Screen
+- **Smoky Black** - Path of Splash Circle of Splash Screen
+- **Yellow** - Outer Splash Circle color
+- **Blue Jeans** - Inner Splash Circle color
+- **Dark Jungle Green** - 404 Text Color
+
+<a href="https://coolors.co/090909-121212-ffff00-03a9f4-011718">
+  <img alt="Color Palette Screenshot" src="src/screenshots/color-loader-404.png"/>
+</a>
+
+### Icon
+
+This is the Favicon of me in [JayantGoel001.github.io](https://JayantGoel001.github.io)
+
+<img alt="Me Icon" src="src/screenshots/icon.png" width="192"/>
+
+Insert the following code in the `<head>` section of your pages to support favicons on all browsers and platforms.
+
+```html
+<meta name="theme-color" content="#242a35">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#242a35">
+<meta name="msapplication-TileColor" content="#242a35">
+<meta name="msapplication-TileImage" content="assets/images/mstile-70x70.png">
+<meta name="msapplication-TileImage" content="assets/images/mstile-144x144.png">
+<meta name="msapplication-TileImage" content="assets/images/mstile-150x150.png">
+<meta name="msapplication-TileImage" content="assets/images/mstile-310x150.png">
+<meta name="msapplication-TileImage" content="assets/images/mstile-310x310.png">
 ```
 
-The data attribute `data-date` is what is used to add a date to the associated timeline point. All that is really required is a wrapping div (i.e. `#experience-timeline`) and nested divs to build the timeline. The h3, h4, and p tags are optional and the contents of the div can be styled however you wish.
+Results :- [100%](https://realfavicongenerator.net/favicon_checker?protocol=https&site=jayantgoel001.github.io)
 
-To add an additional section, simply add additional nested divs under the main wrapping div.
+These are the Font Awesome Icons used in [JayantGoel001.github.io](https://JayantGoel001.github.io)
 
-### Education Section
+<img alt="Font Awesome Icon" src="src/screenshots/font-awesome-icon.png"/>
 
-The Education is just a series of `.education-block` classes with some details associated with them. By default, it shows school name, date, degree, and some additional details. For example:
 
-```HTML
-<div class="education-block">
-    <h3>University of Ottawa</h3>
-    <span class="education-date">Sept 2016 - Sept 2017</span>
-    <h4>Bachelor of Science in Computer Science</h4>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-    </p>
-</div>
+## Built With :package:
+
+- 💙 [HTML5](https://www.w3schools.com/html/)
+- 💜 [CSS3](https://www.w3schools.com/css/)
+- 💙 [JavaScript](https://www.w3schools.com/js/DEFAULT.asp)
+- 💜 [TypeScript](https://www.typescriptlang.org/)
+- 💙 [Angular](https://angular.io/)
+- 💜 [NodeJS](https://nodejs.org/)
+- 💙 [Bootstrap](https://getbootstrap.com/)
+- 💜 [Google Font](https://fonts.google.com/) for the fonts
+- 💙 [FontAwesome](https://fontawesome.com/) for the icons
+- 💜 [GitHub Pages](https://pages.github.com/) for hosting
+- 💙 [Apify](https://apify.com/) for generating screenshot of website
+- 💜 [SmartMockups](https://smartmockups.com/) for adding mockups/desktop background to screenshot
+
+
+## How to run locally? :dart:
+
+  Make sure you have [Node](https://nodejs.org/en/) and [git](https://git-scm.com/) installed.
+
+  ```bash
+  node --version
+  git --version
+  ```
+
+- Clone the repository :
+    - With HTTPS:
+      ```bash
+      git clone https://github.com/JayantGoel001/JayantGoel001.github.io.git
+      ```
+    - With SSH:
+      ```bash
+      git@github.com:JayantGoel001/JayantGoel001.github.io.git
+      ```
+      
+- Navigate to working Directory and **main** branch
+
+	```bash
+	cd JayantGoel001.github.io
+	git switch main
+	```
+
+- Install the dependencies:
+
+  ```bash
+  npm install -f
+  ```
+	- Installs all the dependencies required by the project.
+
+
+- Fire up a development server:
+
+  ```bash
+  ng serve
+  ```
+    - Runs the app in the `development` mode.
+    - Open [http://localhost:4200/](http://localhost:4200/) to view it in the Default Browser.
+    - The page will reload if you make edits.
+    - You will also see any lint errors in the console.
+
+
+- Deploy code to GitHub Pages (gh-pages):
+  
+  ```bash
+  ng deploy --base-href="/"
+  ```
+    - Builds the application for production to the `build` folder & deploys application on `GitHub Pages`.
+    - It correctly bundles Angular in production mode and optimizes the build for the best performance.
+    - The build is minified and the filenames include the hashes.
+  
+
+- Create a new branch:
+
+  ```bash
+  git checkout -b "<NAME-OF-THE-BRANCH>"
+  ```
+
+- Add, Commit & Push the local changes to remote repository:
+
+  ```bash
+  git add .
+  git commit -m "<COMMIT-MESSAGE>"
+  git push origin <NAME-OF-THE-BRANCH>
+  ```
+
+**For Docker Users**
+
+Make sure you have [Docker](https://www.docker.com/products/docker-desktop/) installed.
+
+```bash
+docker --version
 ```
 
-To add additional section, simply add additional `.education-block` elements.
+  - To pull the [GitHub Container Registry](https://github.com/JayantGoel001/JayantGoel001.github.io/pkgs/container/jayantgoel001.github.io) Image:
+    ```bash
+    docker pull ghcr.io/jayantgoel001/jayantgoel001.github.io:latest
+    ```
+  
+  - To pull the [Dockerhub](https://hub.docker.com/r/jayantgoel001/jayantgoel001.github.io) Image:
+    ```bash
+    docker pull jayantgoel001/jayantgoel001.github.io:latest
+    ```
+  
+  - To automatically pull and run the [GitHub Container Registry](https://github.com/JayantGoel001/JayantGoel001.github.io/pkgs/container/jayantgoel001.github.io) Image:
+    ```bash
+    docker run -d -p 4200:80 ghcr.io/jayantgoel001/jayantgoel001.github.io:latest
+    ```
 
-### Projects Section
+  - To automatically pull and run the [Dockerhub](https://hub.docker.com/r/jayantgoel001/jayantgoel001.github.io) Image:
+    ```bash
+    docker run -d -p 4200:80 jayantgoel001/jayantgoel001.github.io:latest
+    ```
 
-The Project section contains a number of `.project` elements that represent each of your projects. By default, it contains a 300x300 image under `.project-image` and relevant project information under `.project-info`. An example is as follows:
+    Open [http://localhost:4200/](http://localhost:4200/) to view it in the Default Browser.
 
-```HTML
-<div class="project">
-    <div class="project-image">
-        <img src="images/project.jpg" />
-    </div>
-    <!-- End .project-image -->
 
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
+## Sections :bookmark:
+
+- Home
+- About
+	- About
+	- Skill
+	- Education
+- Portfolio
+- Training
+- Achievement
+- Contact
+
+
+## Folder Structure :open_file_folder:
+
+<pre>
+|   .all-contributorsrc
+|   .browserslistrc
+|   .dockerignore
+|   .editorconfig
+|   .gitignore
+|   angular.json
+|   Dockerfile
+|   karma.conf.js
+|   ngsw-config.json
+|   package-lock.json
+|   package.json
+|   README.md
+|   tsconfig.app.json
+|   tsconfig.json
+|   tsconfig.spec.json
+|   
++---.github
+|   +---lighthouse
+|   |       budget.json
+|   |       lighthouserc.json
+|   |       
+|   \---workflows
+|           publish-docker.yml
+|           pull-request-deploy-and-audit.yml
+|           fork_star.yml
+|           
+\---src
+    |   apple-touch-icon.png
+    |   browserconfig.xml
+    |   favicon-16x16.png
+    |   favicon-32x32.png
+    |   favicon.ico
+    |   index.html
+    |   LICENSE
+    |   main.ts
+    |   manifest.webmanifest
+    |   polyfills.ts
+    |   README.md
+    |   robots.txt
+    |   sitemap_index.xml
+    |   styles.min.css
+    |   
+    +---app
+    |   |   app-routing.module.ts
+    |   |   app.component.css
+    |   |   app.component.html
+    |   |   app.component.ts
+    |   |   app.module.ts
+    |   |   loadExternalResource.ts
+    |   |   
+    |   +---about
+    |   |       about.component.css
+    |   |       about.component.html
+    |   |       about.component.ts
+    |   |       
+    |   +---achievement
+    |   |       achievement.component.css
+    |   |       achievement.component.html
+    |   |       achievement.component.ts
+    |   |       
+    |   +---application
+    |   |       application.component.css
+    |   |       application.component.html
+    |   |       application.component.ts
+    |   |       application.module.ts
+    |   |       
+    |   +---contact
+    |   |       contact.component.css
+    |   |       contact.component.html
+    |   |       contact.component.ts
+    |   |       
+    |   +---footer
+    |   |       footer.component.css
+    |   |       footer.component.html
+    |   |       footer.component.ts
+    |   |       
+    |   +---home
+    |   |       home.component.css
+    |   |       home.component.html
+    |   |       home.component.ts
+    |   |       
+    |   +---navbar
+    |   |       navbar.component.css
+    |   |       navbar.component.html
+    |   |       navbar.component.ts
+    |   |       
+    |   +---page-not-found
+    |   |       page-not-found.component.css
+    |   |       page-not-found.component.html
+    |   |       page-not-found.component.ts
+    |   |       page-not-found.module.ts
+    |   |       
+    |   +---portfolio
+    |   |       portfolio.component.css
+    |   |       portfolio.component.html
+    |   |       portfolio.component.ts
+    |   |       
+    |   +---quote
+    |   |       quote.component.css
+    |   |       quote.component.html
+    |   |       quote.component.ts
+    |   |       
+    |   +---social
+    |   |       social.component.css
+    |   |       social.component.html
+    |   |       social.component.ts
+    |   |       
+    |   +---training
+    |   |       training.component.css
+    |   |       training.component.html
+    |   |       training.component.ts
+    |   |       
+    |   \---waifu
+    |           Model.ts
+    |           waifu.component.css
+    |           waifu.component.html
+    |           waifu.component.ts
+    |           
+    +---assets
+    |   |   data.min.js
+    |   |   
+    |   +---css
+    |   |       animate.min.css
+    |   |       font-awesome.min.css
+    |   |       
+    |   +---fonts
+    |   |       BlackOpsOne.eot
+    |   |       BlackOpsOne.svg
+    |   |       BlackOpsOne.ttf
+    |   |       BlackOpsOne.woff
+    |   |       BlackOpsOne.woff2
+    |   |       fa-brands-400.eot
+    |   |       fa-brands-400.svg
+    |   |       fa-brands-400.ttf
+    |   |       fa-brands-400.woff
+    |   |       fa-brands-400.woff2
+    |   |       fa-regular-400.eot
+    |   |       fa-regular-400.svg
+    |   |       fa-regular-400.ttf
+    |   |       fa-regular-400.woff
+    |   |       fa-regular-400.woff2
+    |   |       fa-solid-900.eot
+    |   |       fa-solid-900.svg
+    |   |       fa-solid-900.ttf
+    |   |       fa-solid-900.woff
+    |   |       fa-solid-900.woff2
+    |   |       
+    |   +---images
+    |   |   |   404.webp
+    |   |   |   about-bg.svg
+    |   |   |   background-image.jpg
+    |   |   |   bgimg.webp
+    |   |   |   footer-cloud.svg
+    |   |   |   frame-desktop.webp
+    |   |   |   frame-mobile.webp
+    |   |   |   monkey.webp
+    |   |   |   moon-dark.svg
+    |   |   |   moon.svg
+    |   |   |   mstile-144x144.png
+    |   |   |   mstile-150x150.png
+    |   |   |   mstile-310x150.png
+    |   |   |   mstile-310x310.png
+    |   |   |   mstile-70x70.png
+    |   |   |   Profile-pic-144x144.png
+    |   |   |   Profile-pic-192x192.png
+    |   |   |   Profile-pic-384x384.png
+    |   |   |   Profile-pic-512x512.png
+    |   |   |   Profile-pic.webp
+    |   |   |   quote-img.webp
+    |   |   |   safari-pinned-tab.svg
+    |   |   |   
+    |   |   +---achievement
+    |   |   |       DataScience.webp
+    |   |   |       HackerRank.webp
+    |   |   |       Hacktoberfest.webp
+    |   |   |       
+    |   |   \---portfolio
+    |   |           A-Social-Media.webp
+    |   |           AI-Image-Caption-Bot.webp
+    |   |           AI-Music-Generation.webp
+    |   |           E-Commerce-Site.webp
+    |   |           School-Donation-Analysis.webp
+    |   |           URL-Shortner.webp
+    |   |           
+    |   +---js
+    |   |       live2d.min.js
+    |   |       particles.min.js
+    |   |       vanilla-tilt.min.js
+    |   |       wow.min.js
+    |   |       
+    |   \---model
+    |       |   README.md
+    |       |   
+    |  	    \---<a href="src/assets/model/" target="_blank">model</a>
+    |                       
+    +---environments
+    |       environment.prod.ts
+    |       environment.ts
+    |       
+    \---screenshots
+            color-loader-404.png
+            color-main.png
+            font-awesome-icon.png
+            font.png
+            icon.png
+            PageSpeedInsight Desktop.png
+            PageSpeedInsight Mobile.png
+            screenshot.gif
+</pre>
+
+
+## Search engine optimization(SEO) :spider:
+
+Search engine optimization (SEO) is the process of improving the quality and quantity of website traffic to a website or a web page from search engines.
+Add the below code snippet to `src/index.html` with your site info. This step is not mandatory.
+
+```html
+<meta itemprop="name" content="--- YOUR TITLE ---">
+<meta itemprop="description" content="--- SITE DESCRIPTION ---">
+<meta itemprop="url" content="--- YOUR SITE URL ---"/>
+<meta itemprop="image" content="--- YOUR IMAGE ---">
+<link rel="image_src" href="--- YOUR IMAGE ---">
+
+<meta name="author" content="--- YOUR NAME ---">
+<meta name="description" content="--- SITE DESCRIPTION ---">
+<meta name="keywords" content="--- SITE KEYWORDS ---">
+
+<meta property="og:image" content="--- YOUR IMAGE ---">
+<meta property="og:image:width" content="--- YOUR IMAGE WIDTH ---">
+<meta property="og:image:height" content="--- YOUR IMAGE HEIGHT ---">
+<meta property="og:image:alt" content="--- YOUR TITLE ---">
+<meta property="og:title" content="--- YOUR TITLE ---">
+<meta property="og:description" content="--- SITE DESCRIPTION ---">
+<meta property="og:url" content="--- YOUR SITE URL ---">
+<meta property="og:type" content="website">
+
+<meta name="twitter:title" content="--- YOUR TITLE ---">
+<meta name="twitter:description" content="--- SITE DESCRIPTION ---">
+<meta name="twitter:site" content="@--- YOUR USERNAME ---">
+<meta name="twitter:creator" content="@--- YOUR USERNAME ---">
+<meta name="twitter:image:src" content="--- YOUR IMAGE ---">
+<meta name="twitter:image" content="--- YOUR IMAGE ---">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+    {
+        "@type": "Person",
+        "@context": "https://schema.org",
+        "url": "--- YOUR SITE URL ---",
+        "description": "--- SITE DESCRIPTION ---",
+        "name": "--- YOUR NAME ---",
+        "image": "--- YOUR IMAGE ---",
+        "email":"--- YOUR EMAIL ---",
+        "address": "--- YOUR LOCATION ---",
+        "sameAs":[
+            "https://github.com/--- YOUR USERNAME ---/",
+            "https://www.linkedin.com/in/--- YOUR USERNAME ---/",
+            "https://gist.github.com/--- YOUR USERNAME ---/",
+            "https://www.hackerrank.com/--- YOUR USERNAME ---",
+            "https://www.instagram.com/--- YOUR USERNAME ---/",
+            "https://www.facebook.com/--- YOUR USERNAME ---/",
+            "https://twitter.com/--- YOUR USERNAME ---/",
+            "https://dev.to/--- YOUR USERNAME ---",
+            "https://wa.me/--- YOUR MOBILE NUMBER ---"
+        ]
+    }
+</script>
 ```
 
-If you want to hide some projects by default, you can throw them in an additional row and add the markup for the "Show More" button. This would be done as follows:
 
-```HTML
-<!-- Projects Above -->
+## PageSpeed Insights
 
-<a id="view-more-projects" href="#">View More Projects</a>
-<div id="more-projects" class="row">
-    <div class="project shadow-large">
-        <div class="project-image">
-            <img src="images/project.jpg" />
-        </div>
-        <!-- End .project-image -->
-        <div class="project-info">
-            <h3>Project Name Here</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-            </p>
-            <a href="#">View Project</a>
-        </div>
-        <!-- End .project-info -->
-    </div>
-    <!-- End .project -->
-</div>
-```
+PageSpeed Insights (PSI) reports on the performance of a page on both mobile and desktop devices, and provides suggestions on how that page may be improved.
 
-This will add a link that says "View More Projects" under the current projects and when clicked, all projects in the "More-projects" div will be shown. This is optional functionality and isn't provided by default. It is important that you keep the wrapping div ID intact ("#more-projects") as well as the anchor ID ("#view-more-projects"), however the contents of the div and the anchor text itself can be edited however you like.
+- **Desktop**
 
-#### Projects without images
+	[![PageSpeed Insight Desktop](src/screenshots/PageSpeedInsight%20Desktop.png)](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fjayantgoel001.github.io%2F&strategy=desktop&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa)
 
-If you do not wish to have a project image associated with a project, you can simply add `no-image` as an additional class to the project. It would look like the following:
+- **Mobile**
 
-```HTML
-<div class="project no-image">
-    <div class="project-info">
-        <h3>Project Name Here</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex.
-        </p>
-        <a href="#">View Project</a>
-    </div>
-    <!-- End .project-info -->
-</div>
-```
+	[![PageSpeed Insight Mobile](src/screenshots/PageSpeedInsight%20Mobile.png)](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Fjayantgoel001.github.io%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa)
 
-### Skills Section
 
-The Skills section is simply an unordered list that spits out a "Skill Cloud" with all the skills listed. To add / remove skills, simply edit or add list elements, like so:
+## Creator / Maintainer :man_technologist:
 
-```HTML
-<ul>
-    <li>JavaScript</li>
-    <li>Python</li>
-    <li>Ruby</li>
-    <li>Go</li>
-    <li>Node.js</li>
-</ul>
-```
+👤 Jayant Goel ([JayantGoel001](https://github.com/JayantGoel001))
 
-### Contact Section
+If you have any questions, comments, or concerns, feel free to contact me below.
 
-Since the page is static, I opted to use the awesome Formspree to allow for a contact form without the need for anything else. To use it, you must have the page hosted on a server (loading a basic HTML page won't work) where a referrer header is generated. Also, simply add the email to the action. An example is as follows:
+<p align="left">
+	<a href="https://www.linkedin.com/in/JayantGoel001"> 
+    	<img alt="Connect via LinkedIn" src="https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white" />
+  	</a>
+	<a href="mailto:jgoel92@gmail.com"> 
+		<img alt="Connect via Email" src="https://img.shields.io/badge/Gmail-c14438?style=flat&logo=Gmail&logoColor=white" />
+	</a>
+	<a href="https://www.twitter.com/JayantGoel001"> 
+    	<img alt="Connect via Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white" />
+  	</a>
+</p>
 
-```HTML
-<form method="POST" action="https://formspree.io/email@email.com">
-    <input type="hidden" name="_subject" value="Contact request from personal website" />
-    <input type="email" name="_replyto" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message" required></textarea>
-    <button type="submit">Send</button>
-</form>
-```
-For more information on configuration of the contact form or dealing with errors, check out [Formspree](https://formspree.io/).
+This project was created for educational purposes and for personal use. Feel free to take inspiration.
 
-For a quick tutorial about formspree, check out this [tutsplus tutorial](https://webdesign.tutsplus.com/tutorials/quick-tip-add-a-formspree-form-to-your-static-sites--cms-23870) that covers different aspects and features of the form tool.
+If you like my content or find this code useful, give it a ⭐.
 
-### Footer Section
 
-The Footer contains an optional copyright where you can place your name as well as an unordered list of all of your social or coding related profiles. By default it contains Github, Stack Overflow, Facebook, Twitter, and Google Plus. You can add or remove them easily and simply use the Font Awesome icon associated with the social profile you wish to use. For a list of all icons, [click here](http://fontawesome.io/icons/).
+## 🤝 Contributing
 
-### Optional Sections
+Contributions, Issues and Feature requests are Welcome!
 
-The template comes with an optional section that can be added to the page markup to list things like Certifications, Hobbies, and more (Note: these are not included by default). The markup for the additional optional section is as follows:
+Feel free to check the [Issues page](https://github.com/JayantGoel001/JayantGoel001.github.io/issues/).
 
-```HTML
-<div class="optional-section background-alt">
-    <h2 class="heading">Section Name</h2>
 
-    <div class="optional-section-block">
-        <h3>Some content title</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
-        </p>
-        <ul>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-            <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </li>
-        </ul>
-    </div>
-    <!-- End .optional-section-block -->
+## Contributors ✨
 
-</div>
-<!-- End .optional-section -->
-```
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-You can copy .optional-section-block for each new item you wish you have in the optional section. Also, the background-alt class may need to be removed depending on where the optional section is placed in your layout as this adds the grey background. If you play it at the bottom after "Skills", it can be used as is. Also, by default the border is applied at the top, but this can also be adjusted as needed.
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-The optional section blocks have styling for h3 (the block title), h4, p, and ul tags by default.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://JayantGoel001.github.io"><img src="https://avatars.githubusercontent.com/u/54479676?v=4?s=100" width="100px;" alt="Jayant Goel"/><br /><sub><b>Jayant Goel</b></sub></a><br /><a href="https://github.com/JayantGoel001/JayantGoel001.github.io/commits?author=JayantGoel001" title="Code">💻</a> <a href="#ideas-JayantGoel001" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/JayantGoel001/JayantGoel001.github.io/commits?author=JayantGoel001" title="Tests">⚠️</a> <a href="#maintenance-JayantGoel001" title="Maintenance">🚧</a> <a href="https://github.com/JayantGoel001/JayantGoel001.github.io/commits?author=JayantGoel001" title="Documentation">📖</a> <a href="#design-JayantGoel001" title="Design">🎨</a> <a href="https://github.com/JayantGoel001/JayantGoel001.github.io/pulls?q=is%3Apr+reviewed-by%3AJayantGoel001" title="Reviewed Pull Requests">👀</a> <a href="#content-JayantGoel001" title="Content">🖋</a> <a href="#a11y-JayantGoel001" title="Accessibility">️️️️♿️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/anchal-p-908643b6/"><img src="https://avatars.githubusercontent.com/u/73632448?v=4?s=100" width="100px;" alt="Anchal Pandey"/><br /><sub><b>Anchal Pandey</b></sub></a><br /><a href="https://github.com/JayantGoel001/JayantGoel001.github.io/issues?q=author%3Acode1511" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://emmadawson.dev"><img src="https://avatars.githubusercontent.com/u/57045550?v=4?s=100" width="100px;" alt="Emma Dawson"/><br /><sub><b>Emma Dawson</b></sub></a><br /><a href="https://github.com/JayantGoel001/JayantGoel001.github.io/issues?q=author%3Aemmalearnscode" title="Bug reports">🐛</a> <a href="#ideas-emmalearnscode" title="Ideas, Planning, & Feedback">🤔</a> <a href="#a11y-emmalearnscode" title="Accessibility">️️️️♿️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/NarpatAanjana"><img src="https://avatars.githubusercontent.com/u/86047565?v=4?s=100" width="100px;" alt="Narpat Aanjana"/><br /><sub><b>Narpat Aanjana</b></sub></a><br /><a href="https://github.com/JayantGoel001/JayantGoel001.github.io/issues?q=author%3ANarpatAanjana" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
 
-## Changelog
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
 
-### 1.2.2
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
-* Updated dependencies and gulpfile
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-### 1.2.1
 
-* Updated dependencies and gulpfile
-* Added `no-image` optional class for projects without images (see above for usage)
+## 📝 License
 
-### 1.2.0
-
-* Added support for optional "Show More Projects" that hides some projects by default if included
-* Added optional sections to display certifications, languages, etc.
-
-### 1.1.3
-
-* Added default favicon to be used or changed
-* Added `sticky` class to make header fixed
-* Updated docs to add image section
-
-### 1.1.2
-
-* Added `no-scroll` class option to header navigation anchor if you want to link to external site
-* Changed contact form input / textarea colours to be based off `$base-color`
-* Changed main background to 100vh so it doesn't overflow if viewport height < 700px
-
-### 1.1.1
-
-* Made input placeholder text more readable
-* Removed timeline line when no JS
-* Added some basic styling to timeline when no JS
-
-### 1.1.0
-
-* Fixed menu toggle on mobile devices
-* Fixed z-index / scrolling issue with mobile menu
-* Mobile menu now closes once a nav element is hit
-
-## License
-
-Completely free (MIT)! See [LICENSE.md](LICENSE.md) for more.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.<br/>
+Copyright &copy; 2021 Jayant Goel. All rights reserved. 
