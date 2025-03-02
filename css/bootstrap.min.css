@@ -1270,8 +1270,3 @@ hr {
     position: fixed;
 }
 
-.project-image img {
-    width: 300px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
-    object-fit: cover; /* Ensures the image fills the area properly */
-}
